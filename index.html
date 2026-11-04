@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es">
+<link rel="stylesheet" href="styles.css">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Articks Games</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<!-- HEADER -->
+
+<header class="topbar">
+    <img src="img/logo.png" class="logo">
+
+        <div class="buscador">
+            <input type="text" id="searchInput" placeholder="¿Qué estás buscando?">
+            <button onclick="buscarJuego()">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+
+
+    <div class="iconos">
+        <span>ES / MXN</span>
+        <i class="fas fa-user" id="btnUser"></i>
+        <i class="fas fa-heart"></i>
+        <i class="fas fa-shopping-cart"></i>
+    </div>
+</header>
+
+<script src="script.js"></script>
+
+<!-- BODY -->
+
+<body>
+    <section id="loginBox" class="login-box">
+        <form id="formLogin" onsubmit="return validarFormulario()">
+
+            <h2>Iniciar Sesión</h2>
+
+            <input type="text" name="usuario" placeholder="Usuario">
+            <input type="password" name="password" placeholder="Contraseña">
+
+            <button type="submit">Ingresar</button>
+
+            <p class="link" onclick="mostrarRecuperar()">¿Olvidaste tu contraseña?</p>
+
+        </form>
+
+        <form id="formRecuperar">
+
+            <h2>Recuperar Contraseña</h2>
+
+            <input type="email" id="correoRecuperacion" placeholder="Ingresa tu correo">
+
+            <button type="button" onclick="recuperarPassword()">Enviar</button>
+
+            <p class="link" onclick="volverLogin()">Volver al login</p>
+
+        </form>
+        </form>
+    </section>
+
+    <section class="juegos">
+
+        <div class="game-card">
+            <img src="img/fallout.jpg">
+            <h3>Fallout 4 Anniversary</h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">175.57 MXN</div>
+        </div>
+
+        <div class="game-card">
+            <img src="img/indiana.jpg">
+            <h3>Indiana Jones</h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">195.89 MXN</div>
+        </div>
+
+        <div class="game-card">
+            <img src="img/ff7.jpg">
+            <h3>Final Fantasy VII Rebirth</h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">132.88 MXN</div>
+        </div>
+
+        <div class="game-card">
+            <img src="img/resident.jpg">
+            <h3>Resident Evil Requiem</h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">189.55 MXN</div>
+        </div>
+
+        <div class="game-card">
+            <img src="img/projectzomboid.png">
+            <h3>Project Zomboid</h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">150.66 MXN</div>
+        </div>
+
+    </section>
+
+    <section class="juegos">
+
+        <div class="game-card">
+            <img src="img/minecraft.png">
+            <h3>Minecraft: Java & Bedrock Edition</h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">300.53 MXN EUR</div>
+        </div>
+
+        <div class="game-card">
+            <img src="img/rust.png">
+            <h3>Rust</h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">163.61 MXN</div>
+        </div>
+
+        <div class="game-card">
+            <img class="portada" src="img/gta5.png">
+            <h3>Grand Theft Auto V</h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">222.06 MXN</div>
+        </div>
+
+        <div class="game-card">
+            <img src="img/rdr2.png">
+            <h3>Red Dead Redemption 2</h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">330.55 MXN</div>
+        </div>
+
+        <div class="game-card">
+            <img src="img/among.png">
+            <h3>Among Us</h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">81.80 MXN</div>
+        </div>
+
+    </section>
+    
+    <section class="juegos">
+
+        <div class="game-card">
+            <img src="img/subnautica.png">
+            <h3>Subnautica</h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">17.18 USD</div>
+        </div>
+
+        <div class="game-card">
+            <img src="img/repo.png">
+            <h3>R.E.P.O.</h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">5.52 USD</div>
+        </div>
+
+        <div class="game-card">
+            <img src="img/pvz.png">
+            <h3>Plantas vs Zombies</h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">2.73 USD</div>
+        </div>
+
+        <div class="game-card">
+            <img src="img/hytale.png">
+            <h3>Hytale </h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">16.60 USD</div>
+        </div>
+|
+        <div class="game-card">
+            <img src="img/fornite.png">
+            <h3>Fortnite</h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">Gratis</div>
+        </div>
+
+
+    </section>
+
+    <section class="juegos">
+
+        <div class="game-card">
+            <img src="img/fallout.jpg">
+            <h3>Fallout 4 Anniversary</h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">8.95 EUR</div>
+        </div>
+
+        <div class="game-card">
+            <img src="img/indiana.jpg">
+            <h3>Indiana Jones</h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">8.95 EUR</div>
+        </div>
+
+        <div class="game-card">
+            <img src="img/ff7.jpg">
+            <h3>Final Fantasy VII Rebirth</h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">8.95 EUR</div>
+        </div>
+
+        <div class="game-card">
+            <img src="img/resident.jpg">
+            <h3>Resident Evil Requiem</h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">8.95 EUR</div>
+        </div>
+
+        <div class="game-card">
+            <img src="img/projectzomboid.png">
+            <h3>Project Zomboid</h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">7.68 EUR</div>
+        </div>
+
+    </section>
+
+    <section class="juegos">
+
+        <div class="game-card">
+            <img src="img/minecraft.png">
+            <h3>Minecraft: Java & Bedrock Edition</h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">15.32 EUR</div>
+        </div>
+
+        <div class="game-card">
+            <img src="img/rust.png">
+            <h3>Rust</h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">8.34 EUR</div>
+        </div>
+
+        <div class="game-card">
+            <img class="portada" src="img/gta5.png">
+            <h3>Grand Theft Auto V</h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">11.32 EUR</div>
+        </div>
+
+        <div class="game-card">
+            <img src="img/rdr2.png">
+            <h3>Red Dead Redemption 2</h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">16.85 EUR</div>
+        </div>
+
+        <div class="game-card">
+            <img src="img/among.png">
+            <h3>Among Us</h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">4.17 EUR</div>
+        </div>
+
+    </section>
+    
+    <section class="juegos">
+
+        <div class="game-card">
+            <img src="img/subnautica.png">
+            <h3>Subnautica</h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">17.18</div>
+        </div>
+
+        <div class="game-card">
+            <img src="img/repo.png">
+            <h3>R.E.P.O.</h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">5.52</div>
+        </div>
+
+        <div class="game-card">
+            <img src="img/pvz.png">
+            <h3>Plantas vs Zombies</h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">2.73</div>
+        </div>
+
+        <div class="game-card">
+            <img src="img/hytale.png">
+            <h3>Hytale </h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">16.60</div>
+        </div>
+
+        <div class="game-card">
+            <img src="img/fornite.png">
+            <h3>Fortnite</h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">Gratis</div>
+        </div>
+
+
+    </section>
+
+    <section class="carrusel-container">
+
+    <button class="btn-carrusel izquierda" onclick="moverCarrusel(-1)">❮</button>
+
+    <div class="carrusel" id="carrusel">
+
+        <div class="game-card">
+            <img src="img/fallout.jpg">
+            <h3>Fallout 4 Anniversary</h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">8.95 EUR</div>
+        </div>
+
+        <div class="game-card">
+            <img src="img/indiana.jpg">
+            <h3>Indiana Jones</h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">8.95 EUR</div>
+        </div>
+
+        <div class="game-card">
+            <img src="img/ff7.jpg">
+            <h3>Final Fantasy VII Rebirth</h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">8.95 EUR</div>
+        </div>
+
+        <div class="game-card">
+            <img src="img/resident.jpg">
+            <h3>Resident Evil Requiem</h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">8.95 EUR</div>
+        </div>
+
+        <div class="game-card">
+            <img src="img/subnautica.png">
+            <h3>Subnautica</h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">17.18</div>
+        </div>
+
+        <div class="game-card">
+            <img src="img/repo.png">
+            <h3>R.E.P.O.</h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">5.52</div>
+        </div>
+
+        <div class="game-card">
+            <img src="img/pvz.png">
+            <h3>Plantas vs Zombies</h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">2.73</div>
+        </div>
+
+        <div class="game-card">
+            <img src="img/hytale.png">
+            <h3>Hytale </h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">16.60</div>
+        </div>
+
+        <div class="game-card">
+            <img src="img/fornite.png">
+            <h3>Fortnite</h3>
+            <p>PC</p>
+            <span class="region">GLOBAL</span>
+            <div class="precio">Gratis</div>
+        </div>
+
+        
+    </div>
+
+     <button class="btn-carrusel derecha" onclick="moverCarrusel(1)">❯</button>
+
+    </section>
+
+    <script src="script.js"></script>
+
+    <button id="btnArriba">↑</button>
+
+</body>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="footer-contenido">
+
+        <div class="redes">
+            <h2>Nuestras Redes Sociales</h2>
+
+            <div class="red-item">
+                <i class="fab fa-tiktok"></i>
+                <span>Articks_Monkeys</span>
+            </div>
+
+            <div class="red-item">
+                <i class="fab fa-instagram"></i>
+                <span>@ArticksMonkeys</span>
+            </div>
+
+            <div class="red-item">
+                <i class="fab fa-x-twitter"></i>
+                <span>@ArticksMonkeys</span>
+            </div>
+
+            <div class="red-item">
+                <i class="fab fa-twitch"></i>
+                <span>ArticksMonkeys</span>
+            </div>
+
+            <div class="red-item">
+                <i class="fab fa-facebook"></i>
+                <span>Articks Monkeys</span>
+            </div>
+        </div>
+
+        <div class="gladiador">
+            <img src="img/gladiator.png" alt="Gladiador Articks">
+        </div>
+
+        <div class="mapa">
+            <h2>Ubicación</h2>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d670.8574931858459!2d-97.78735492886219!3d23.778577101368445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8679fd5fa5c23719%3A0xd8fa449d55c86ca0!2sUTMART%20-%20Universidad%20Tecnol%C3%B3gica%20del%20Mar%20de%20Tamaulipas%20Bicentenario!5e1!3m2!1ses!2smx!4v1771962427971!5m2!1ses!2smx"
+                width="100%"
+                height="250"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy">
+            </iframe>
+        </div>
+
+    </div>
+
+</footer>
+
+</html>
